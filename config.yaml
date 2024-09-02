@@ -1,4 +1,6 @@
-dao:
-  database:
-    driver: pgx
-    source:
+mysql: "vbenAdmin:WD82ixHxRdwjXBpf@tcp(159.75.188.250:3306)/vbenadmin?charset=utf8mb4&parseTime=True&loc=Local"
+jwtKey: "qcylAdminWd"
+redis:
+  url: "127.0.0.1:6379"
+  pwd: ""
+  DB: 1
