@@ -2,7 +2,6 @@ package Routers
 
 import (
 	"github.com/gin-gonic/gin"
-	"goVben/Api/Admin/Auth"
 	"goVben/Controllers"
 	"goVben/Routers/AdminRouters"
 	"net/http"
@@ -19,7 +18,6 @@ func SetupRouter() *gin.Engine {
 	})
 
 	authorized := r.Group("/", Controllers.BasicAuthMiddleware)
-	authorized.POST("/test", Auth.TestRedis)
 	//authorized.POST("admin", func(c *gin.Context) {
 	//	// Parse JSON
 	//	var json struct {

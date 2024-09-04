@@ -4,6 +4,7 @@ import (
 	"context"
 	"github.com/redis/go-redis/v9"
 	"goVben/Utils/Config"
+	"time"
 )
 
 var rdb *redis.Client
@@ -19,8 +20,8 @@ func Init() error {
 	return rdb.Ping(ctx).Err()
 }
 
-func Set(key, value string) error {
-	return rdb.Set(ctx, key, value, 0).Err()
+func Set(key string, value any, expAt time.Duration) error {
+	return rdb.Set(ctx, key, value, expAt).Err()
 }
 
 func Get(key string) (string, error) {

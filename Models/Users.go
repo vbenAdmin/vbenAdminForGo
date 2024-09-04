@@ -6,6 +6,7 @@ type Users struct {
 	Account  string `gorm:"column:account;type:varchar(50)" form:"account" json:"account,omitempty" binding:"required,max=30"`
 	Password string `gorm:"column:password;type:varchar(50)" form:"password" json:"password,omitempty" binding:"required,max=50"`
 	Avatar   string `gorm:"column:avatar;type:varchar(255)" json:"avatar,omitempty"`
+	Token    string `json:"token,omitempty"'`
 }
 
 func (t *Users) TableName() string {
